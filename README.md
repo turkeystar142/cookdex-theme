@@ -17,6 +17,9 @@ A cozy recipe theme for Hugo with an index card aesthetic and picnic table vibe.
 
 ![Home](https://raw.githubusercontent.com/turkeystar142/cookdex-theme/main/images/screenshot.png)
 ![Recipe](https://raw.githubusercontent.com/turkeystar142/cookdex-theme/main/images/tn.png)
+![Background Switcher](https://raw.githubusercontent.com/turkeystar142/cookdex-theme/main/images/background.png)
+![Cursor Switcher](https://raw.githubusercontent.com/turkeystar142/cookdex-theme/main/images/cursor.png)
+![Filter Pane](https://raw.githubusercontent.com/turkeystar142/cookdex-theme/main/images/filter.png)
 
 ## Requirements
 
@@ -31,7 +34,7 @@ cd your-hugo-site
 git submodule add https://github.com/turkeystar142/cookdex.git themes/cookdex
 ```
 
-### Option 2: Clone
+### Option 2: Clone Repo
 
 ```bash
 cd your-hugo-site/themes
