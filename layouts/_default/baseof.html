@@ -6,6 +6,27 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <script>
+      (function() {
+        var SESSION_FLAG = 'ginghamSessionActive';
+        var STORAGE_KEY = 'ginghamSettings';
+        if (!sessionStorage.getItem(SESSION_FLAG)) {
+          localStorage.removeItem(STORAGE_KEY);
+          sessionStorage.setItem(SESSION_FLAG, 'true');
+          return;
+        }
+        sessionStorage.setItem(SESSION_FLAG, 'true');
+        try {
+          var saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            var s = JSON.parse(saved);
+            var rgba = 'rgba(' + s.color.r + ',' + s.color.g + ',' + s.color.b + ',' + (s.opacity / 100) + ')';
+            document.documentElement.style.setProperty('--gingham-red', rgba);
+            document.documentElement.style.setProperty('--gingham-thickness', s.thickness + 'px');
+          }
+        } catch(e) {}
+      })();
+    </script>
     <link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
 </head>
 <body>
